@@ -25,7 +25,7 @@ Aby uruchomić projekt, wykonaj następujące kroki:
 ### Krok 2: Skopiowanie repozytorium
 1. Sklonuj repozytorium na swój komputer:
 ```sh
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/Hapers/Tworzenie-aplikacji-dla-rodowisk-chmurowychprojekt.git
 ```
 2. Przejdź do folderu projektu: cd your-repository
 ### Krok 3: Uruchomienie aplikacji za pomocą Docker
