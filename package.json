@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.7.0",
+    "plotly.js": "^2.33.0",
+    "plotly.js-dist": "^2.33.0"
+  }
+}

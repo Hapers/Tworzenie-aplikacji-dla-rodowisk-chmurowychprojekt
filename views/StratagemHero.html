@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StratagemHero</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="full-nav">
+        <div class="left-nav">
+            <a href="/" class="current">HOME PAGE</a>
+            <a href="/dashboard">HISTORY</a>
+        </div>
+        <div class="right-nav">
+            <div id="profile">
+                <a href="/Profile">PROFILE</a>
+            </div>
+            <div id="guest" >
+                <a href="/signup">SIGN UP</a>
+                <a href="/login">LOGIN</a>
+            </div>
+        </div>
+    </div>
+    <div id='game-div' class="example">
+        <div id="destroy" class="ingame_icon"></div>
+        <div id="arrowsContainer"></div>
+        <div id="timerDisplay">Remaining time: 20 seconds</div>
+        <div id="correctAnswersDisplay">Correct answers: 0</div>
+        <div id="generateButtonContainer">
+            <button id="generateButton">Start</button>
+        </div>
+    </div>
+    <div class="stat">
+        <div class="css-ocvuti">
+                <h2>Stragem Hero</h2>
+                <p>Click the arrows in the correct sequence.</p>
+                <p>This test checks reflexes and keystroke speeds.</p>
+                <p>You initially have 20 seconds and for each correct order of arrows you get +1 seconds.</p>
+        </div>
+        <div id="plotlib" class="css-ocvuti">           
+        </div>
+    </div>
+
+    <script src="/js/StratagemHero.js"></script>
+</body>
+<script>
+    function calculateDesiredWidth(percentageToLeaveOut) {
+          const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+          const desiredWidth = screenWidth - (screenWidth * (percentageToLeaveOut / 100));
+          return desiredWidth;
+      }
+   document.addEventListener('DOMContentLoaded',function() {
+
+   fetch('/get-stratagemHero')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            let x =[];
+            let y =[];
+   
+            data.forEach(element => {
+                x.push(element.date);
+                y.push(element.score);
+            });
+            var data = [{
+        x: x,
+        y: y,
+        mode: "lines+markers",
+        type: 'scatter'
+     }];
+     
+     var layout = {
+         width: calculateDesiredWidth(55) > 600 ? calculateDesiredWidth(55) : 600,
+         height: 350,
+         margin: {
+             l: 30,
+             r: 30,
+             t: 50,
+             b: 50 
+         },
+         yaxis: {
+                    dtick: 1, // Ensures that the step between ticks is 1 unit, thus showing only whole numbers
+                    tickformat: ".0f" // Formats the ticks to show no decimal places
+                }
+         
+     };
+     var config = {
+         showLink: true,
+         plotlyServerURL: "https://chart-studio.plotly.com", 
+         staticPlot: true
+     };
+
+     Plotly.newPlot('plotlib', data, layout, config);
+        })
+       .catch((error) => {
+           console.error('Error getting the response:', error);
+       })
+   
+   });
+ </script>
+</html>

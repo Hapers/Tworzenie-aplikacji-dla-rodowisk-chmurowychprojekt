@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+
+    <div class="full-nav">
+        <div class="left-nav">
+            <a href="/" class="current">HOME PAGE</a>
+            <a href="/dashboard">HISTORY</a>
+        </div>
+        <div class="right-nav">
+                <a id="logout">LOG OUT</a>
+        </div>
+    </div>
+
+    <div class="sidenav">
+        <div class="profile">
+            <div class="sidenav-url">
+                <div class="url">
+                    <a href="#profile" class="active">Profile</a>
+                </div>
+            </div>
+            <img src="/images/user.png" alt="" width="100" height="100">
+
+            <div id="name-field" class="name">
+            </div>
+            <div id="mail-field" class="info">
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <h2>INFO</h2>
+        <div class="card">
+            <div class="card-body">
+                <i class="fa fa-pen fa-xs edit"></i>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td>:</td>
+                            <td></td>
+                            <td><input id="username" type="text" class="styled-input" placeholder="Edit Name"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td></td>
+                            <td><input type="email" id="email" name="email" class="styled-input" placeholder="Edit Email"></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td>:</td>
+                            <td></td>
+                            <td><input id="password" type="text" class="styled-input" placeholder="Edit Password"></td>
+                        </tr>
+                        <td><button id="generateButton">Save changes</button></td>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</body>
+<script src="/js/profile.js"></script>
+</html>

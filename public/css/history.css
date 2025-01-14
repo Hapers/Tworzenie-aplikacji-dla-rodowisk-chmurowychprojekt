@@ -1,0 +1,96 @@
+body{
+    display: block; 
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    background: #f5f5f5; 
+    color: #4a4a4a; 
+    line-height: 1.3;
+}
+
+
+.full-nav {
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff; 
+    color: #4a4a4a; 
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px 0px;
+    font-size: 18px;
+    line-height: 1;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    text-decoration: none;
+}
+
+.left-nav, .right-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.full-nav a, .full-nav button {
+    color: inherit;
+    display: inline-block;
+    padding: 15px 12px;
+    line-height: inherit;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    background: none;
+    border: none;
+}
+.full-nav a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+
+.grid {
+    position: relative;
+    top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 90%;
+    column-gap: 0px;
+}
+
+.width-50 {
+    width: 90%;
+}
+
+.history-block {
+    display: block;
+    flex: 1 1 0%;
+    line-height: 1;
+    background: white;
+    margin: 0px 20px;
+    color: rgb(51, 51, 51) !important;
+    text-decoration: none !important;
+    height: 400px;
+    line-height: 1.7;
+    margin-top: 20px;
+    padding-bottom: 0px;
+}
+
+.title{
+    height: 10%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.plot {
+    align-content: center;
+    height: 90%;
+}
+
+
+.title a{
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    background: #f5f5f5; 
+    color: #4a4a4a;
+    line-height: 1.3;
+    overflow-y: scroll;
+}
+
+.full-nav {
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff; 
+    color: #4a4a4a; 
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px 0px;
+    font-size: 18px;
+    line-height: 1;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    padding: 0px 10px;
+    text-decoration: none;
+}
+
+.left-nav, .right-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.full-nav a, .full-nav button {
+    color: inherit;
+    display: inline-block;
+    padding: 15px 12px;
+    line-height: inherit;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    background: none;
+    border: none;
+}
+.full-nav a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.example {
+    background: #6c63ff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.img_icon{
+    height: 170px;
+    width: 170px;
+}
+.text_f {
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 3px;
+}
+.text_s {
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1px;
+}
+.butyell{
+    margin: 30px 0px 0px;
+    padding: 12px 30px;
+    background: #ffcc00; 
+    display: inline-block;
+    border-radius: 3px; 
+    font-weight: bold;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    color: #4a4a4a; 
+    text-decoration: none;
+    transition: background 0.5s ease;
+}
+.butyell:hover {
+    background: #ffffff; 
+}
+.game_icon{
+    height: 120px;
+    width: 120px;
+    
+}
+.first_block{
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.games{
+    display: block;
+    flex: 1 1 0%;
+    line-height: 1;
+    background: #e0e0e0; 
+    color: #4a4a4a; 
+    text-decoration: none;
+    padding: 30px;  
+    margin: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;  
+}
+.kube{
+    fill: rgb(0, 0, 0);
+
+}
+
+.kubew{
+    fill: rgb(255, 255, 255);
+    width: 64px;
+    height: 64px;
+    transform: scale(1);
+}
+
+.kubewp{
+    fill: rgb(255, 255, 255);
+    width: 64px;
+    height: 64px;
+    transform: scale(1.06);
+}
+
+
+.games:hover {
+    transform: translateY(-10px);
+
+}
+.games:hover .game_icon{
+    fill: #3b7ada;
+}
+.games:hover .kube{
+    fill: #3b7ada;
+}
+h3 {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-size: 30px;
+    font-weight: bold;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-size: 20px;
+}
+.game_list{
+    margin: 0px auto;
+    max-width: 1010px;
+    position: relative;
+    padding: 30px;
+}
+
+#arrowsContainer span {
+    font-size: 60px; 
+    font-weight: 900; 
+    margin-right: 20px;
+    color: black;
+}
+
+/* Стили для кнопки */
+#generateButton {
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    margin: 30px 0px 0px;
+    padding: 12px 30px;
+    background: #ffcc00; 
+    display: inline-block;
+    border-radius: 3px; 
+    font-weight: bold;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    color: #4a4a4a;
+    text-decoration: none;
+    transition: background 0.5s ease;
+}
+
+
+
+#generateButton:hover {
+    background-color: #ffffff;
+}
+body{
+    display: block; 
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    background: #f5f5f5; 
+    color: #4a4a4a; 
+    line-height: 1.3;
+    overflow-y: scroll;
+}
+
+#arrowsContainer, #timerDisplay, #correctAnswersDisplay {
+    display: block;
+    margin-bottom: 20px; 
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 35px;
+}
+.green{
+    color: rgb(255, 255, 255) !important;
+}
+.ingame_icon{
+    height: 160px;
+    width: 240px;
+    background-image: url(../images/arrows_white.svg);
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+ .bg_img{
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
+.try-again-button {
+    display: none; 
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    margin: 30px 0px 0px;
+    padding: 12px 30px;
+    background: #ffcc00; 
+    border-radius: 3px; 
+    font-weight: bold;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    color: #4a4a4a;
+    text-decoration: none;
+    transition: background 0.5s ease;
+}
+
+.try-again-button:hover {
+    background-color: #ffffff;
+}
+
+.css-ocvuti {
+    display: block;
+    flex: 1 1 0%;
+    line-height: 1;
+    background: white;
+    padding: 20px 0px;
+    color: rgb(51, 51, 51) !important;
+    text-decoration: none !important;
+    height: 400px;
+    width: 250px;
+    margin: 10px 0px;
+    line-height: 1.7;
+}
+
+.stat{
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+
+.stat > div {
+    margin: 30px;
+}
+
+.ex_svg{
+    height: 180px;
+    width: 240px;
+    fill: #ffffff;
+
+}
+
+#inputText {
+    color: black;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+    padding: 25px;
+    font-size: 25px;
+    width: 30%;
+}
+
+#inputText:focus,
+#inputText:hover {
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+}
+
+#title{
+    padding-bottom: 15px;
+    color: white;
+    font-size: 35px;
+}
+.try-againButton {
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    margin: 30px 0px 0px;
+    padding: 12px 30px;
+    background: #ffcc00;
+    display: inline-block;
+    border-radius: 3px; 
+    font-weight: bold;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    color: #4a4a4a; 
+    text-decoration: none;
+    transition: background 0.5s ease;
+}

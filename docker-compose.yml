@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      - CONNECTION_STRING=mongodb://db:27017/
+      - DATASET_NAME=minigame
+      - COLLECTION_aimTrainer=aimTrainer
+      - COLLECTION_simonSays=simonSays
+      - COLLECTION_stratagemHero=stratagemHero
+      - COLLECTION_typingGame=typingGame
+    depends_on:
+      - db
+
+
+  db:
+    image: mongo:6
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

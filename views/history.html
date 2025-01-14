@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="/css/history.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="full-nav">
+        <div class="left-nav">
+            <a href="/" class="current">HOME PAGE</a>
+            <a href="/dashboard">HISTORY</a>
+        </div>
+        <div class="right-nav">
+            <div id="profile">
+                <a href="/Profile">PROFILE</a>
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="history-block width-50 flex">
+            <div class="title"><a href="/stratagemhero">Stratagem Hero</a></div>
+            <div id="stratagemHero" class="plot"></div>
+        </div>
+        <div class="history-block width-50 flex">
+            <div class="title"><a href="/aimtrainer">Aim Trainer</a></div>
+            <div id="aimTrainer" class="plot"></div>
+        </div>
+        <div class="history-block width-50 flex">
+            <div class="title"><a href="/typing">Typing Test</a></div>
+            <div id="typingGame" class="plot"></div>
+        </div>
+        <div class="history-block width-50 flex">
+            <div class="title"><a href="/simonsays">Simon Says</a></div>
+            <div id="simonSays" class="plot"></div>
+        </div>
+    </div>
+</body>
+<script src="/js/history.js"></script>
+</html>

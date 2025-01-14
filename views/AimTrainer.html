@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AimTrainer</title>
+    <link rel="stylesheet" href="/css/AimTrainer.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="bodygame">
+        <h1 id="title">Aim trainer</h1>
+        <h2 id="start">Click the circle to start game <br><center>Score 10 to win</center></h2>
+        <h2 id="gameOver">Game Over</h2>
+        <h2 id="gameScore"></h2>
+        <h2 id="final"></h2>
+        <a href="#" id="playAgain">Try again</a>
+        <a href="/" id="backhome">Home</a>
+        <canvas id="canvas"></canvas>
+        <div class="cursor"></div>
+    </div>
+    <div class="stat">
+        <div class="css-ocvuti">
+                <h2>Aim Trainer</h2>
+                <p>Click the targets as quickly and accurately as you can. </p>
+                <p>This tests reflexes and hand-eye coordination.</p>
+                <p>Once you've clicked 10 targets, your score and average time per target will be displayed.</p>
+                <p>This test is best taken with a mouse or tablet screen. Trackpads are difficult to score well with.</p>
+        </div>
+        <div id="plotlib" class="css-ocvuti">           
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+        integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+        integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+        crossorigin="anonymous"></script>
+
+    <script src="/js/AimTrainer.js"></script>
+</body>
+ <script>
+    function calculateDesiredWidth(percentageToLeaveOut) {
+          const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+          const desiredWidth = screenWidth - (screenWidth * (percentageToLeaveOut / 100));
+          return desiredWidth;
+      }
+    document.addEventListener('DOMContentLoaded',function() {
+        fetch('/get-aimTrainer')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            let x =[];
+            let y =[];
+   
+            data.forEach(element => {
+                x.push(element.date);
+                y.push(element.score);
+            });
+            var data = [{
+        x: x,
+        y: y,
+        mode: "lines+markers",
+        type: 'scatter'
+     }];
+     
+     var layout = {
+         width: calculateDesiredWidth(55) > 600 ? calculateDesiredWidth(55) : 600,
+         height: 350,
+         margin: {
+             l: 30,
+             r: 30,
+             t: 50,
+             b: 50 
+         },
+         yaxis: {
+                    dtick: 10, // Ensures that the step between ticks is 1 unit, thus showing only whole numbers
+                    tickformat: ".0f" // Formats the ticks to show no decimal places
+                }
+         
+     };
+     var config = {
+         showLink: true,
+         plotlyServerURL: "https://chart-studio.plotly.com", 
+         staticPlot: true
+     };
+
+     Plotly.newPlot('plotlib', data, layout, config);
+        })
+       .catch((error) => {
+           console.error('Error getting the response:', error);
+       })
+   
+    });
+  </script>
+</html>
